@@ -9,7 +9,7 @@ class nodejs (
 		}
 	}
 	exec { 'nave' :
-		command     => "bash -c \"\$(curl -s 'https://raw.github.com/isaacs/nave/master/nave.sh') usemain $version \"",
+		command     => "bash -c \"\$(curl -Ls 'https://raw.githubusercontent.com/isaacs/nave/master/nave.sh') usemain $version \"",
 		path        => [ "/usr/local/bin", "/bin" , "/usr/bin" ],
 		require     => Package[ 'curl' ],
 		environment => [ 'HOME=""', 'PREFIX=/usr/local/lib/node', 'NAVE_JOBS=1' ],
